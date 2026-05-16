@@ -1,0 +1,40 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependencies
+node_modules/
+vendor/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+.env/
+.venv/
+
+# Environment Variables (CRITICAL)
+.env
+.env.*
+!.env.example
+
+# Build directories
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
