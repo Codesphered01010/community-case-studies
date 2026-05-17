@@ -23,7 +23,7 @@ Kumpulan skrip, tools, dan otomatisasi untuk mempermudah pekerjaan.
 
 | No | Nama Project | Deskripsi Singkat | Tech Stack | Author |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | [Contoh: Auto Whatsapp Sender](./automation/auto-whatsapp-sender-johndoe) | Skrip otomatisasi pengirim pesan WA massal berdasarkan data dari file CSV/Excel. | `Node.js` `Puppeteer` | [@username](https://github.com/username) |
+| 1 | [Auto Riview Bot](./automation/Auto-Riview-Website-@KayyOnly) | Skrip otomatisasi testing berbasis AI yang dapat melakukan crawling website, UI testing, responsive testing, accessibility audit, visual testing, API inspection, dan analisis bug secara otomatis. | `Python` `Playwright` | [@KayyOnly](https://github.com/KayyOnly) |
 
 ## Bots
 Kumpulan bot Discord, Telegram, WhatsApp, dan platform lainnya.
