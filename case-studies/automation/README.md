@@ -20,7 +20,7 @@ Berikut adalah karya-karya luar biasa yang telah dibuat oleh member komunitas ki
 
 | No | Nama Project | Deskripsi Singkat | Tech Stack | Author |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | [Auto Riview Bot](./Auto_Riview-Website-@KayyOnly) | Skrip otomatisasi testing berbasis AI yang dapat melakukan crawling website, UI testing, responsive testing, accessibility audit, visual testing, API inspection, dan analisis bug secara otomatis. | `Python` `Puppeteer` | [@username](https://github.com/KayyOnly) |
+| 1 | [Auto Riview Bot](./Auto_Riview-Website-@KayyOnly) | Skrip otomatisasi testing berbasis AI yang dapat melakukan crawling website, UI testing, responsive testing, accessibility audit, visual testing, API inspection, dan analisis bug secara otomatis. | `Python` `Playwright` | [@username](https://github.com/KayyOnly) |
 
 ---
 
