@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitRank | The Ultimate GitHub Profile Analyzer</title>
+    <meta name="description" content="Discover your GitHub developer rank with our futuristic cyberpunk analyzer.">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="logo glitch" data-text="GITRANK">GITRANK</div>
+        <div class="nav-controls">
+            <div class="nav-links">
+                <a href="#" id="nav-home" class="active" data-i18n="nav_analyze">Analyze</a>
+                <a href="#" id="nav-compare" data-i18n="nav_compare">Compare</a>
+            </div>
+            <div class="lang-switch">
+                <button id="lang-id" class="lang-btn active">ID</button>
+                <span class="lang-sep">|</span>
+                <button id="lang-en" class="lang-btn">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section id="search-section" class="active-section">
+            <div class="hero-content">
+                <h1 class="hero-title"><span data-i18n="hero_title_search1">Discover Your</span> <span class="text-glow" data-i18n="hero_title_search2">Rank</span></h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle_search">Enter your GitHub username to decrypt your developer stats and unveil your global standing.</p>
+                
+                <div class="search-box">
+                    <input type="text" id="username-input" placeholder="Enter GitHub username" data-i18n-placeholder="search_placeholder" autocomplete="off" spellcheck="false">
+                    <button id="analyze-btn" class="cyber-btn">
+                        <span class="btn-text" data-i18n="btn_initialize">INITIALIZE_</span>
+                        <span class="btn-glitch"></span>
+                    </button>
+                </div>
+                
+                <div id="search-error-container" class="error-container hidden">
+                    <div class="error-glow-border">
+                        <span class="error-icon">⚠️</span>
+                        <div class="error-text">
+                            <span class="error-title" data-i18n="err_title">SYSTEM FAILURE</span>
+                            <span class="error-desc" id="search-error-desc" data-i18n="err_not_found">Username not found in the GitHub grid.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compare-search-section" class="hidden">
+            <div class="hero-content">
+                <h1 class="hero-title"><span data-i18n="hero_title_compare1">1v1</span> <span class="text-glow" data-i18n="hero_title_compare2">Battle</span></h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle_compare">Enter two GitHub usernames to see who has the superior stats.</p>
+                
+                <div class="search-box">
+                    <input type="text" id="player1-input" placeholder="Player 1 username" data-i18n-placeholder="p1_placeholder" autocomplete="off" spellcheck="false">
+                    <span class="vs-text text-glow">VS</span>
+                    <input type="text" id="player2-input" placeholder="Player 2 username" data-i18n-placeholder="p2_placeholder" autocomplete="off" spellcheck="false">
+                    <button id="compare-btn" class="cyber-btn">
+                        <span class="btn-text" data-i18n="btn_fight">FIGHT_</span>
+                        <span class="btn-glitch"></span>
+                    </button>
+                </div>
+
+                <div id="compare-error-container" class="error-container hidden">
+                    <div class="error-glow-border">
+                        <span class="error-icon">⚠️</span>
+                        <div class="error-text">
+                            <span class="error-title" data-i18n="err_title">SYSTEM FAILURE</span>
+                            <span class="error-desc" id="compare-error-desc" data-i18n="err_not_found">Username not found in the GitHub grid.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="loading-section" class="hidden">
+            <div class="loader-ring">
+                <div class="ring inner"></div>
+                <div class="ring outer"></div>
+            </div>
+            <div class="loading-text-container">
+                <p id="loading-message" data-i18n="loading_init">Establishing connection to mainframe...</p>
+                <div class="progress-bar-container">
+                    <div id="loading-progress" class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compare-loading-section" class="hidden">
+            <div class="fight-loader">
+                <div class="battle-fx">
+                    <div class="beam blue-beam"></div>
+                    <div class="clash-spark">
+                        <span class="chevron-text">&lt;</span>
+                        <div class="energy-core"></div>
+                        <span class="chevron-text">&gt;</span>
+                    </div>
+                    <div class="beam pink-beam"></div>
+                </div>
+            </div>
+            <div class="loading-text-container mt-2">
+                <p id="compare-loading-message" class="text-glow" data-i18n="loading_battle_init">Initializing Battle Arena...</p>
+            </div>
+        </section>
+
+        <section id="result-section" class="hidden">
+            <div class="dashboard-grid">
+
+                <div class="dashboard-col left-col">
+                    <div class="glass-panel profile-card fade-in-up delay-1">
+                        <div class="profile-header">
+                            <div class="avatar-container">
+                                <img id="user-avatar" src="" alt="User Avatar">
+                                <div class="avatar-ring"></div>
+                            </div>
+                            <div class="user-info">
+                                <h2 id="user-name">Name</h2>
+                                <a id="user-login" href="#" target="_blank">@username</a>
+                            </div>
+                        </div>
+                        
+                        <div class="rank-display-container">
+                            <div class="tier-badge-container">
+                                <div id="tier-badge" class="tier-badge" data-tier="?">?</div>
+                            </div>
+                            <div class="score-container">
+                                <span class="score-label" data-i18n="label_power_level">POWER_LEVEL</span>
+                                <div class="score-value"><span id="user-score">0</span><span class="max-score">/100</span></div>
+                            </div>
+                            <div class="archetype-container">
+                                <span class="archetype-label" data-i18n="label_class">CLASS: </span>
+                                <span id="user-archetype" class="archetype-value text-glow" data-i18n="class_unknown">Unknown</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button id="share-btn" class="cyber-btn small-btn">
+                                <span class="btn-text" data-i18n="btn_share">SHARE_PROFILE</span>
+                            </button>
+                            <button id="reset-btn" class="cyber-btn outline-btn small-btn">
+                                <span class="btn-text" data-i18n="btn_recalibrate">RECALIBRATE</span>
+                            </button>
+                        </div>
+                        
+                        <div class="qr-container">
+                            <img id="user-qr" src="" alt="Profile QR Code">
+                            <span class="qr-label" data-i18n="label_scan">SCAN_ID</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel chart-card fade-in-up delay-2">
+                        <h3 class="panel-title" data-i18n="title_skill_matrix">SKILL_MATRIX</h3>
+                        <div class="radar-container">
+                            <canvas id="radar-chart" width="280" height="280"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-col right-col">
+                    <div class="stats-grid fade-in-up delay-3">
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon neon-cyan">📚</div>
+                            <div class="stat-info">
+                                <span class="stat-label" data-i18n="stat_repos">REPOSITORIES</span>
+                                <span id="stat-repos" class="stat-number">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon neon-yellow">⭐</div>
+                            <div class="stat-info">
+                                <span class="stat-label" data-i18n="stat_stars">TOTAL_STARS</span>
+                                <span id="stat-stars" class="stat-number">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon neon-pink">👥</div>
+                            <div class="stat-info">
+                                <span class="stat-label" data-i18n="stat_followers">FOLLOWERS</span>
+                                <span id="stat-followers" class="stat-number">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-icon neon-purple">💻</div>
+                            <div class="stat-info">
+                                <span class="stat-label" data-i18n="stat_commits">EST. COMMITS</span>
+                                <span id="stat-commits" class="stat-number">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel tech-stack-card fade-in-up delay-4">
+                        <h3 class="panel-title" data-i18n="title_tech_stack">TECH_STACK</h3>
+                        <div id="language-bar-container" class="language-bar">
+                            
+                        </div>
+                        <div id="language-legend" class="language-legend">
+                            
+                        </div>
+                    </div>
+
+                    <div class="glass-panel commentary-card fade-in-up delay-5">
+                        <h3 class="panel-title" data-i18n="title_ai_analysis">AI_ANALYSIS</h3>
+                        <div class="typewriter-container">
+                            <p id="ai-commentary"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel achievements-card fade-in-up delay-6">
+                        <h3 class="panel-title" data-i18n="title_unlocked_badges">UNLOCKED_BADGES</h3>
+                        <div id="badges-container" class="badges-grid">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compare-result-section" class="hidden">
+            <div class="compare-grid">
+                
+                <div class="compare-col glass-panel fade-in-up delay-1" id="p1-card">
+                    <div class="crown hidden" id="p1-crown" data-i18n="winner_crown">👑 WINNER</div>
+                    <img class="compare-avatar" id="p1-avatar" src="" alt="">
+                    <h2 class="text-glow" id="p1-name">Player 1</h2>
+                    <div class="compare-score" id="p1-score">0</div>
+                    <div class="compare-tier" id="p1-tier">?</div>
+                    <ul class="compare-stats">
+                        <li><span data-i18n="stat_repos">REPOS</span>: <span id="p1-repos">0</span></li>
+                        <li><span data-i18n="stat_stars">STARS</span>: <span id="p1-stars">0</span></li>
+                        <li><span data-i18n="stat_followers">FOLLOWERS</span>: <span id="p1-followers">0</span></li>
+                    </ul>
+                </div>
+                
+                <div class="vs-divider text-glow fade-in-up delay-2">VS</div>
+
+                <div class="compare-col glass-panel fade-in-up delay-3" id="p2-card">
+                    <div class="crown hidden" id="p2-crown" data-i18n="winner_crown">👑 WINNER</div>
+                    <img class="compare-avatar" id="p2-avatar" src="" alt="">
+                    <h2 class="text-glow" id="p2-name">Player 2</h2>
+                    <div class="compare-score" id="p2-score">0</div>
+                    <div class="compare-tier" id="p2-tier">?</div>
+                    <ul class="compare-stats">
+                        <li><span data-i18n="stat_repos">REPOS</span>: <span id="p2-repos">0</span></li>
+                        <li><span data-i18n="stat_stars">STARS</span>: <span id="p2-stars">0</span></li>
+                        <li><span data-i18n="stat_followers">FOLLOWERS</span>: <span id="p2-followers">0</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="action-buttons mt-2 fade-in-up delay-4">
+                <button id="compare-reset-btn" class="cyber-btn outline-btn"><span class="btn-text" data-i18n="btn_new_battle">NEW_BATTLE</span></button>
+            </div>
+        </section>
+
+        <div id="toast-container"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
