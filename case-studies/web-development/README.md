@@ -20,7 +20,8 @@ Berikut adalah karya-karya luar biasa yang telah dibuat oleh member komunitas ki
 
 | No | Nama Project | Deskripsi Singkat | Tech Stack | Author |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | [Contoh: E-Commerce Dashboard](./e-commerce-dashboard-johndoe) | Dashboard admin untuk manajemen toko online, dilengkapi fitur visualisasi data penjualan mingguan. | `Next.js` `TailwindCSS` | [@username](https://github.com/username) |
+| 1 | [GitRank](GitRank-DzarelDeveloper) | GitRank adalah penganalisis profil GitHub interaktif bertema neon cyberpunk. Aplikasi ini mendekripsi statistik publik akun Anda secara real-time untuk menentukan tingkat peringkat kekuatan (Power Level Tier D hingga SSS) serta mendefinisikan tipe spesialisasi developer (Archetype). Proyek ini juga dilengkapi dengan fitur 1v1 Battle Arena interaktif untuk mengadu statistik pengkodean antardeveloper dengan seru. | `HTML5` `Vanilla CSS` `Vanilla JavaScript`| [@DzarelDeveloper](https://github.com/DzarelDeveloper)
+ |
 
 ---
 
