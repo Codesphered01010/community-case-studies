@@ -58,7 +58,7 @@ Kumpulan project web berupa Frontend, Backend, maupun Fullstack.
 
 | No | Nama Project | Deskripsi Singkat | Tech Stack | Author |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | [GitRank](./web-deevelopment/GitRank-DzarelDeveloper) | GitRank adalah penganalisis profil GitHub interaktif bertema neon cyberpunk. Aplikasi ini mendekripsi statistik publik akun Anda secara real-time untuk menentukan tingkat peringkat kekuatan (Power Level Tier D hingga SSS) serta mendefinisikan tipe spesialisasi developer (Archetype). Proyek ini juga dilengkapi dengan fitur 1v1 Battle Arena interaktif untuk mengadu statistik pengkodean antardeveloper dengan seru. | `HTML5` `Vanilla CSS` `Vanilla JavaScript`| [@DzarelDeveloper](https://github.com/DzarelDeveloper) |
+| 1 | [GitRank](./web-development/GitRank-DzarelDeveloper) | GitRank adalah penganalisis profil GitHub interaktif bertema neon cyberpunk. Aplikasi ini mendekripsi statistik publik akun Anda secara real-time untuk menentukan tingkat peringkat kekuatan (Power Level Tier D hingga SSS) serta mendefinisikan tipe spesialisasi developer (Archetype). Proyek ini juga dilengkapi dengan fitur 1v1 Battle Arena interaktif untuk mengadu statistik pengkodean antardeveloper dengan seru. | `HTML5` `Vanilla CSS` `Vanilla JavaScript`| [@DzarelDeveloper](https://github.com/DzarelDeveloper) |
 
 <br>
 
