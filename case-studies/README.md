@@ -58,7 +58,7 @@ Kumpulan project web berupa Frontend, Backend, maupun Fullstack.
 
 | No | Nama Project | Deskripsi Singkat | Tech Stack | Author |
 | :---: | :--- | :--- | :--- | :--- |
-| 1 | [Contoh: E-Commerce Dashboard](./web-development/e-commerce-dashboard-johndoe) | Dashboard admin untuk manajemen toko online, dilengkapi fitur visualisasi data penjualan mingguan. | `Next.js` `TailwindCSS` | [@username](https://github.com/username) |
+| 1 | [GitRank](./web-development/GitRank-DzarelDeveloper) | Dashboard admin untuk manajemen toko online, dilengkapi fitur visualisasi data penjualan mingguan. | `Next.js` `TailwindCSS` | [@DzarelDeveloper(https://github.com/DzarelDeveloper) |
 
 <br>
 
