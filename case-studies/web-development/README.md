@@ -21,6 +21,7 @@ Berikut adalah karya-karya luar biasa yang telah dibuat oleh member komunitas ki
 | No | Nama Project | Deskripsi Singkat | Tech Stack | Author |
 | :---: | :--- | :--- | :--- | :--- |
 | 1 | [GitRank](GitRank-DzarelDeveloper) | GitRank adalah penganalisis profil GitHub interaktif bertema neon cyberpunk. Aplikasi ini mendekripsi statistik publik akun Anda secara real-time untuk menentukan tingkat peringkat kekuatan (Power Level Tier D hingga SSS) serta mendefinisikan tipe spesialisasi developer (Archetype). Proyek ini juga dilengkapi dengan fitur 1v1 Battle Arena interaktif untuk mengadu statistik pengkodean antardeveloper dengan seru. | `HTML5` `Vanilla CSS` `Vanilla JavaScript`| [@DzarelDeveloper](https://github.com/DzarelDeveloper)
+| 2 | [ZyraStore-Ecommerce](ZyraStore-Ecommercek-DzarelDeveloper) | GitRank adalah penganalisis profil GitHub interaktif bertema neon cyberpunk. Aplikasi ini mendekripsi statistik publik akun Anda secara real-time untuk menentukan tingkat peringkat kekuatan (Power Level Tier D hingga SSS) serta mendefinisikan tipe spesialisasi developer (Archetype). Proyek ini juga dilengkapi dengan fitur 1v1 Battle Arena interaktif untuk mengadu statistik pengkodean antardeveloper dengan seru. | `HTML5` `Vanilla CSS` `Vanilla JavaScript`| [@DzarelDeveloper](https://github.com/DzarelDeveloper)
  |
 
 ---
